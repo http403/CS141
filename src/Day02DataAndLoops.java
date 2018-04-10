@@ -28,7 +28,9 @@ public class Day02DataAndLoops {
     }
 
     public static void forLoop() {
-
+        for (int i=0; i<=10; i++) {
+            System.out.println(i);
+        }
     }
 
     public static void nestedLoop() {
