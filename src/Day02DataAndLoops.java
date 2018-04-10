@@ -25,7 +25,7 @@ public class Day02DataAndLoops {
     public static void beer() {
         for (int i=10;i>0;i--) {
             System.out.println(i + " bottles of beer on the wall, " + i + " bottles of beer");
-            System.out.println("Take one down, pass it around, "+ (i-1) +" bottles of beer on the wall");
+            System.out.println("Take one down, pass it around, "+ (i-1) +" bottles of beer on the wall\n");
         }
     }
 
