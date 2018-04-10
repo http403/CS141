@@ -22,12 +22,12 @@ public class HW02 {
     }
 
     public static void monday() {
-        System.out.println("Today is Monday, Today is Monday");
+        System.out.println("Today is Monday, Today is Monday,");
         mondayFood();
     }
 
     public static void tuesdayFood() {
-        System.out.println("Tuesday, Seaghetti");
+        System.out.println("Tuesday, Spaghetti");
         mondayFood();
     }
 
