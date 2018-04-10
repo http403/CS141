@@ -40,7 +40,11 @@ public class Day02DataAndLoops {
     }
 
     public static void nestedLoop() {
-
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.println(i);
+            }
+        }
     }
 
     // evaluating expressions
