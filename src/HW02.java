@@ -90,3 +90,59 @@ public class HW02 {
         System.out.println("All you hungry children, come and eat it up!\n");
     }
 }
+
+/*
+    Output:
+
+    Today is Monday, Today is Monday,
+    Monday, String Beans
+    All you hungry children, come and eat it up!
+
+    Today is Tuesday, Today is Tuesday,
+    Tuesday, Spaghetti
+    Monday, String Beans
+    All you hungry children, come and eat it up!
+
+    Today is Wednesday, Today is Wednesday,
+    Wednesday, Zoooop
+    Tuesday, Spaghetti
+    Monday, String Beans
+    All you hungry children, come and eat it up!
+
+    Today is Thursday, Today is Thursday,
+    Thursday, Roast Beef
+    Wednesday, Zoooop
+    Tuesday, Spaghetti
+    Monday, String Beans
+    All you hungry children, come and eat it up!
+
+    Today is Friday, Today is Friday,
+    Friday, Fresh Fish
+    Thursday, Roast Beef
+    Wednesday, Zoooop
+    Tuesday, Spaghetti
+    Monday, String Beans
+    All you hungry children, come and eat it up!
+
+    Today is Saturday, Today is Saturday,
+    Saturday, Chicken
+    Friday, Fresh Fish
+    Thursday, Roast Beef
+    Wednesday, Zoooop
+    Tuesday, Spaghetti
+    Monday, String Beans
+    All you hungry children, come and eat it up!
+
+    Today is Sunday, Today is Sunday,
+    Sunday, Ice Cream
+    Saturday, Chicken
+    Friday, Fresh Fish
+    Thursday, Roast Beef
+    Wednesday, Zoooop
+    Tuesday, Spaghetti
+    Monday, String Beans
+    All you hungry children, come and eat it up!
+
+    All you hungry children, come and eat it up!
+
+ */
