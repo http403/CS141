@@ -23,8 +23,10 @@ public class Day02DataAndLoops {
 
     // should print the "beer song" from 10 to 1
     public static void beer() {
-        System.out.println("10 bottles of beer on the wall, 10 bottles of beer");
-        System.out.println("Take one down, pass it around, 9 bottles of beer on the wall");
+        for (int i=10;i>0;i++) {
+            System.out.println(i + " bottles of beer on the wall, " + i + " bottles of beer");
+            System.out.println("Take one down, pass it around, "+ (i-1) +" bottles of beer on the wall");
+        }
     }
 
     public static void forLoop() {
