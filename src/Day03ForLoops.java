@@ -1,6 +1,6 @@
 public class Day03ForLoops {
     // class constant - cannot be reassigned; ALL_CAPS; must be given a value at start
-//    public static final int SIZE = 5;
+    public static final int SIZE = 15;
 
     public static void main(String[] args) {
         dotBox();
@@ -42,11 +42,31 @@ public class Day03ForLoops {
   */
     public static void dotNumBox() {
         // First without a systematic approach
+//        for (int i = 1; i <= 8; i++) {
+//            for (int j = 8; j > i; j--) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//        }
 
         // With a systematic approach
-
+//        for (int i = 1; i <= 8; i++) {
+//            for (int j = 0; j < -1 * i + 8; j++) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//        }
         // With a second set of dots
-
+        for (int i = 1; i <= 8; i++) {
+            for (int j = 8; j > i; j--) {
+                System.out.print(".");
+            }
+            System.out.print(i);
+            for (int k = 0; k < i - 1; k++) {
+                System.out.print(".");
+            }
+            System.out.println();
+        }
     }
 
     // This is PracticeIt Exercise 2.22 which produces:
@@ -60,13 +80,59 @@ public class Day03ForLoops {
       ************$**$************
    */
     public static void dollarFigure() {
+        for (int line = 0; line < 7; line++) {
+            for (int j = 0; j < 2 * line; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < 7 - line; j++) {
+                System.out.print("$");
+            }
+            for (int j = 0; j < 2 * (7 - line); j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < 7 - line; j++) {
+                System.out.print("$");
+            }
+            for (int j = 0; j <2 * line; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     // This method allows the dot/num box above to be scaled using the class constant
     public static void scaledDotNumBox() {
+        for (int i = 1; i <= SIZE; i++) {
+            for (int j = SIZE; j > i; j--) {
+                System.out.print(".");
+            }
+            System.out.print(i);
+            for (int k = 0; k < i - 1; k++) {
+                System.out.print(".");
+            }
+            System.out.println();
+        }
     }
 
     // This is PracticeIt Exercise 2.23 which is a scalable version of Ex 2.22:
     public static void dollarFigure2() {
+        for (int line = 0; line < SIZE; line++) {
+            for (int j = 0; j < 2 * line; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < SIZE - line; j++) {
+                System.out.print("$");
+            }
+            for (int j = 0; j < 2 * (SIZE - line); j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < SIZE - line; j++) {
+                System.out.print("$");
+            }
+            for (int j = 0; j <2 * line; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 }
