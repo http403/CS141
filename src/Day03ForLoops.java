@@ -1,12 +1,12 @@
 public class Day03ForLoops {
     // class constant - cannot be reassigned; ALL_CAPS; must be given a value at start
-    public static final int SIZE = 15;
+    public static final int SIZE = 7;
 
     public static void main(String[] args) {
-        dotBox();
-        dotNumBox();
-        dollarFigure();
-        scaledDotNumBox();
+        //dotBox();
+        //dotNumBox();
+        //dollarFigure();
+        //scaledDotNumBox();
         dollarFigure2();
     }
 
