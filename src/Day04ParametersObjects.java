@@ -33,8 +33,8 @@ public class Day04ParametersObjects {
     }
 
     // this method should return the int literal 10
-    public static void ten() {
-        System.out.println("10");
+    public static int ten() {
+        return 10;
     }
 
     // From PracticeIt BJP4 Exercise 3.8: quadratic
