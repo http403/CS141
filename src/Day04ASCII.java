@@ -39,7 +39,11 @@ public class Day04ASCII {
     }
 
     public static void hourglass_cap() {
-        System.out.println("|\"\"\"\"\"\"\"\"\"\"|");
+        System.out.print("|");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("\"");
+        }
+        System.out.println("|");
     }
 
     public static void hourglass_belt() {
