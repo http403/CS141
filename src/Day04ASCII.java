@@ -6,6 +6,8 @@ public class Day04ASCII {
 //        hourglass_reverse_cone();
     }
 
+    public static final int LINES = 8;
+
 
     /* This method should produce the following
        -----1-----
@@ -31,33 +33,33 @@ public class Day04ASCII {
        |""""""""""|
     */
     public static void hourglass() {
-        hourglass_cap();
-        hourglass_reverse_cone();
-        hourglass_belt();
-        hourglass_cone();
-        hourglass_cap();
+        hourglass_cap(LINES);
+        hourglass_reverse_cone(LINES);
+        hourglass_belt(LINES);
+        hourglass_cone(LINES);
+        hourglass_cap(LINES);
     }
 
-    public static void hourglass_cap() {
+    public static void hourglass_cap(int lines) {
         System.out.print("|");
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 2 * lines + 2; i++) {
             System.out.print("\"");
         }
         System.out.println("|");
     }
 
-    public static void hourglass_belt() {
-        for (int i = 0; i < 5; i++) {
+    public static void hourglass_belt(int lines) {
+        for (int i = 0; i < lines + 1; i++) {
             System.out.print(" ");
         }
         System.out.println("||");
     }
 
-    public static void hourglass_cone() {
+    public static void hourglass_cone(int lines) {
         // Define the number of lines
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < lines; i++) {
             // Print out space padding
-            for (int k = (4 - i); k > 0; k--) {
+            for (int k = (lines - i); k > 0; k--) {
                 System.out.print(" ");
             }
             // Starts to print actual shape
@@ -69,15 +71,15 @@ public class Day04ASCII {
         }
     }
 
-    public static void hourglass_reverse_cone() {
-        for (int i = 0; i < 4; i++) {
+    public static void hourglass_reverse_cone(int lines) {
+        for (int i = 0; i < lines; i++) {
             // Print out space padding
             for (int k = 0; k < i + 1; k++) {
                 System.out.print(" ");
             }
             // Starts to print actual shape
             System.out.print("\\");
-            for (int j = (8 - 2 * i); j > 0; j--) {
+            for (int j = (2 * (lines - i)); j > 0; j--) {
                 System.out.print(":");
             }
             System.out.println("/");
