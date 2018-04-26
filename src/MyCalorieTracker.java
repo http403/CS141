@@ -1,8 +1,8 @@
 // Hartman Tam
 // CS 141
-// HW Core Topics: class constants, nested loops, if statements
+// HW Core Topics: loops, Scanner, return, parameter
 //
-// This program will print out a scalable firecracker
+// This program will compare two days net calories and determine performance.
 
 import java.util.Scanner;
 
@@ -32,7 +32,9 @@ public class MyCalorieTracker {
     }
     public static int setGoal(Scanner console) {
         System.out.print("What is your calories goal for the day? > ");
-        return console.nextInt();
+        int goal = console.nextInt();
+        System.out.println();
+        return goal;
     }
     public static int dailyIntake(Scanner console, int day) {
         System.out.printf("Information for Day #%d:\n" +
@@ -47,8 +49,8 @@ public class MyCalorieTracker {
         return calories;
     }
     public static int dailyBurnedOut(Scanner console) {
-        System.out.print("\t\t\twhat was your activity level? 1) not active 2) lightly active\n" +
-                "\t\t\t\t\t\t\t\t\t\t\t3) active or 4) very active? ");
+        System.out.print("\t\twhat was your activity level? 1) not active 2) lightly active\n" +
+                "\t\t\t\t\t\t\t\t\t  3) active or 4) very active? ");
         int burned = console.nextInt();
         if (burned == 2) {
             burned = 250;
@@ -90,7 +92,7 @@ public class MyCalorieTracker {
         return intake - burned;
     }
     public static void printDisclaimer() {
-        System.out.println("** DISCLAIMER: System results are probably wrong. I\n" +
+        System.out.println("** DISCLAIMER: Summary results are probably wrong. I\n" +
                 "wouldn't trust them if I were you.");
     }
 }
