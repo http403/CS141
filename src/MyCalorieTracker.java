@@ -96,3 +96,43 @@ public class MyCalorieTracker {
                 "wouldn't trust them if I were you.");
     }
 }
+/*
+    Output:
+
+    This program compares your daily caloric intake
+    for two days and determines which day was better
+    in regards to reaching your fitness goals.
+
+    What is your calories goal for the day? > 1200
+
+    Information for Day #1:
+    how many meals did you eat? > 3
+    how many calories were consumed in meal 1? 350
+    how many calories were consumed in meal 2? 350
+    how many calories were consumed in meal 3? 600
+    -- Total caloric intake = 1300 --
+    what was your activity level? 1) not active 2) lightly active
+    3) active or 4) very active? 1
+    -- Estimated active caloric burn = 0 --
+
+    Information for Day #2:
+    how many meals did you eat? > 5
+    how many calories were consumed in meal 1? 250
+    how many calories were consumed in meal 2? 180
+    how many calories were consumed in meal 3? 400
+    how many calories were consumed in meal 4? 250
+    how many calories were consumed in meal 5? 600
+    -- Total caloric intake = 1680 --
+    what was your activity level? 1) not active 2) lightly active
+    3) active or 4) very active? 3
+    -- Estimated active caloric burn = 500 --
+
+    Day 1 Net Calories = 1300
+    Day 2 Net Calories = 1180
+    You were closer to your goal on Day 2**
+    Average Net Calories = 1240.0
+
+    ** DISCLAIMER: Summary results are probably wrong. I
+    wouldn't trust them if I were you.
+    
+*/
