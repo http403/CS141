@@ -1,26 +1,26 @@
 import java.util.Scanner;
 
 public class CandyMachine {
-    private static double moneyLeft;
-    private static double productPrice;
-
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
+
         intro();
-        askMoney(console);
+        double money = setMoney(console);
         listStocks();
-        askProduct(console);
-        returnChange();
+        double price = askProduct(console);
+        returnChange(money, price);
     }
 
     public static void intro() {
         System.out.println("Welcome to Shoreline's Computer Candy Mahine!\n(All candy provided is virtual.)\n");
     }
 
-    public static void askMoney(Scanner concole) {
+    public static double setMoney(Scanner concole) {
         System.out.print("How much monehy do ya got? > ");
-        setMoney(concole.nextDouble());
-        System.out.println("$" + moneyLeft + ", that's all?\n");
+        double money = concole.nextDouble();
+        System.out.println("$" + money + ", that's all?\n");
+
+        return money;
     }
 
     public static void listStocks() {
@@ -32,45 +32,35 @@ public class CandyMachine {
                 "E $0.55 Juicy Fruit Gum\n");
     }
 
-    public static void askProduct(Scanner console) {
-        System.out.print("So, What'll ya have? > ");
-        String input = console.next();
-        if (input.equalsIgnoreCase("a") || input.equalsIgnoreCase("d")) {
-            setPrice(0.65);
-        } else if (input.equalsIgnoreCase("b")) {
-            setPrice(0.5);
-        } else if (input.equalsIgnoreCase("c")) {
-            setPrice(0.65);
-        } else if (input.equalsIgnoreCase("e")) {
-            setPrice(0.55);
-        } else {
-            setPrice(0);
-        }
+    public static double askProduct(Scanner console) {
+        double price;
+        do {
+            System.out.print("So, What'll ya have? > ");
+            String input = console.next();
+            if (input.equalsIgnoreCase("a") || input.equalsIgnoreCase("d")) {
+                price = 0.65;
+            } else if (input.equalsIgnoreCase("b")) {
+                price = 0.5;
+            } else if (input.equalsIgnoreCase("c")) {
+                price = 0.65;
+            } else if (input.equalsIgnoreCase("e")) {
+                price = 0.55;
+            } else {
+                price = -1;
+            }
+        } while (price < 0);
         System.out.println();
+
+        return price;
     }
 
-    public static void returnChange() {
-        double change = getChange();
+    public static void returnChange(double money, double price) {
+        double change = money - price;
         if (change > 0) {
             System.out.println("Thanks for purchasing candy through us.\n" +
                     "Please take your candy and you $" + change + " change!");
         } else {
-            System.out.println("You're broke. Take your $" + moneyLeft + " and go elsewhere.");
+            System.out.println("You're broke. Take your $" + money + " and go elsewhere.");
         }
     }
-
-    private static int setMoney(double dollar) {
-        moneyLeft = dollar;
-        return 0;
-    }
-
-    private static int setPrice(double price) {
-        productPrice = price;
-        return 0;
-    }
-
-    private static double getChange() {
-        return moneyLeft - productPrice;
-    }
-
 }
