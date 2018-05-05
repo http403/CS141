@@ -19,7 +19,7 @@ public class GuessingGame {
 
         welcome();
         do {
-            temp = play(new Random().nextInt(MAX_GUESS) + 1);
+            temp = play(new Random().nextInt(MAX_GUESS) + 1);   // Initialize play()
             played++;
             if (temp < best_guess) {
                 best_guess = temp;
@@ -48,9 +48,8 @@ public class GuessingGame {
 
     // Actual game logic
     public static int play(int random) {
-        System.out.printf("\nI'm thinking of a number between 1 and %d", MAX_GUESS);
+        System.out.printf("\nI'm thinking of a number between 1 and %d\n", MAX_GUESS);
 //        System.out.printf("\nP.S.: The number I'm thinking of is %d", random);    // Debug line
-        System.out.println();
         boolean correctness = false;
         int count = 0;
         while(!correctness) {
@@ -82,7 +81,7 @@ public class GuessingGame {
                 played, guessed, (double) guessed / played, best_guess);
     }
 
-    // Logic control for play again
+    // Logic control and word prompt for play again
     public static boolean playAgain() {
         char input = prompt("Do you want to play again?").toLowerCase().charAt(0);
         return input == 'y';
