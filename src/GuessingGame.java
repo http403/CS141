@@ -49,36 +49,34 @@ public class GuessingGame {
     // Actual game logic
     public static int play(int random) {
         System.out.printf("\nI'm thinking of a number between 1 and %d\n", MAX_GUESS);
-//        System.out.printf("\nP.S.: The number I'm thinking of is %d", random);    // Debug line
-        boolean correctness = false;
+        System.out.printf("P.S.: The number I'm thinking of is %d\n", random);    // Debug line
         int count = 0;
-        while(!correctness) {
-            int result = Integer.parseInt(prompt("Your guess?"));
+        int result = -1;
+        while (result != random) {
+            result = Integer.parseInt(prompt("Your guess?"));
             count++;
             if (result > random) {
                 System.out.println("It's lower.");
             } else if (result < random) {
                 System.out.println("It's higher.");
-            } else if (result == random) {
-                correctness = true;
-                if (count == 1) {
-                    System.out.println("You got it right on the first guess!!");
-                } else {
-                    System.out.printf("You got it right in %d guesses\n", count);
-                }
             }
         }
+        if (count == 1) {
+            System.out.println("You got it right on the first guess!!");
+        } else {
+            System.out.printf("You got it right in %d guesses\n", count);
+        }
+
         return count;
     }
 
     // Print overall results
     public static void summary(int played, int guessed, int best_guess) {
-        System.out.printf("\nOverall results:\n" +
-                "\tTotal games  = %d\n" +
-                "\tTotal gueses = %d\n" +
-                "\tguesses/game = %.1f\n" +
-                "\tbest game    = %d\n",
-                played, guessed, (double) guessed / played, best_guess);
+        System.out.print("\nOverall results:\n");
+        System.out.printf("\tTotal games  = %d\n", played);
+        System.out.printf("\tTotal gueses = %d\n", guessed);
+        System.out.printf("\tguesses/game = %.1f\n", (double) guessed / played);
+        System.out.printf("\tbest game    = %d\n", best_guess);
     }
 
     // Logic control and word prompt for play again
