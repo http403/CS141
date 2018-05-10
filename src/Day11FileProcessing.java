@@ -20,9 +20,9 @@ public class Day11FileProcessing {
     }
 
     // echos the first 10 ints in a file
-    public static void echo10(Scanner in ) {
+    public static void echo10(Scanner in) {
         for (int i = 1; i <= 10; i++) {
-            int token = in .nextInt();
+            int token = in.nextInt();
             System.out.println("number = " + token);
         }
     }
