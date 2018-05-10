@@ -1,11 +1,9 @@
-package day11;
-
 import java.io.*;
 import java.util.*;
 
 public class Day11FileProcessing {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner numFile = new Scanner(new File("numbers.txt"));
+        Scanner numFile = new Scanner(new File("src/day11/numbers.txt"));
         echo10(numFile);
         //echoAll(numFile);
         //sumAll(numFile);
