@@ -1,60 +1,27 @@
+// Hartman Tam
+// CS 141
+// HW Core Topics: Scanner, File, PrintStream, Exception
+//
+// This program will read a diary in text format and conclude each day with ":)", ":(", or ":|".
+
 import java.io.File;
 import java.io.PrintStream;
 import java.util.Scanner;
 
 public class DiaryAnalysis {
+
+    // Program entry point
     public static void main(String[] args) {
         try {
             // Set path to input and output
             File input = new File("data/diary.txt");
-            File output = new File("data/diary_summary.txt");
-
-            // Initialize counter
-            int counter = 0;
+            File output = new File("data/summary.txt");
 
             // Ensure that there is a file ready to write
             output.createNewFile();
 
-            // Parse set Scanner object for input and output
-            Scanner inStream = new Scanner(input);
-            PrintStream outStream = new PrintStream(output);
-
-            String preMonth = "Jan";
-            System.out.println(preMonth);
-
-            while (inStream.hasNextLine()) {
-                // Get one line from Scanner
-                String line = inStream.nextLine();
-
-                // Parse line into 3 parts
-                String month = line.substring(0, 3);
-                String day = line.substring(3,5);
-                String diary = line.substring(5);
-
-                // Print month if changed
-                if (!month.equals(preMonth)) {
-                    System.out.println(month);
-                    preMonth = month;
-                }
-
-                // Print day
-                System.out.print("\t - " + day);
-
-                // compute score
-                int score = lineRate(diary);
-
-                // print summary
-                if (score > 0) {
-                    System.out.println(" :)");
-                } else if (score < 0) {
-                    System.out.println(" :(");
-                } else {
-                    System.out.println(" :|");
-                }
-            }
-
-            System.out.println(counter + " total days analyzed");
-
+            // call main logic method
+            parseAndPrint(input, output);
 
         } catch (java.io.FileNotFoundException e) {
             System.err.println("File Not Found: " + e.getMessage());
@@ -66,6 +33,56 @@ public class DiaryAnalysis {
             System.err.println("Incorrectly Formatted Date: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    // main logic of the program
+    public static void parseAndPrint(File in, File out) throws java.io.FileNotFoundException {
+        // set Scanner object for input and output
+        Scanner inStream = new Scanner(in);
+        PrintStream outStream = new PrintStream(out);
+
+        // Initialize counter
+        int counter = 0;
+
+        // set first month for comparison
+        String preMonth = "Jan";
+        outStream.println(preMonth);
+
+        while (inStream.hasNextLine()) {
+            // Get one line from Scanner
+            String line = inStream.nextLine();
+
+            // Parse line into 3 parts
+            String month = line.substring(0, 3);
+            String day = line.substring(3, 5);
+            String diary = line.substring(5);
+
+            // Print month if changed
+            if (!month.equals(preMonth)) {
+                outStream.println(month);
+                preMonth = month;
+            }
+
+            // Print day
+            outStream.print("\t - " + day);
+
+            // compute score
+            int score = lineRate(diary);
+
+            // increase counter by one
+            counter++;
+
+            // print summary
+            if (score > 0) {
+                outStream.println(" :)");
+            } else if (score < 0) {
+                outStream.println(" :(");
+            } else {
+                outStream.println(" :|");
+            }
+        }
+
+        outStream.println("\n" + counter + " total days analyzed");
     }
 
     // A reader for calling wordRate(), return line score
@@ -91,3 +108,35 @@ public class DiaryAnalysis {
         return 0;
     }
 }
+
+/*
+    Output:
+        diary.txt:
+            Jan01 New year: Everything is great!
+            Jan14 Today I got free ice cream. SO GOOD! #bestdayever
+            Feb10 Meh. I'm fine.
+            Feb21 I'm having a terrible horrible no good day.
+            Feb23 Yesterday was horrible, but today is great! Yay!
+            May02 Sad Panda. #terribleday
+            May15 Hello World, today is fabulous! #yay
+            Jun01 Great! Yay! Good! Yay! Happy. Happy. #goodgreatyay
+            Jun11 Yay, yay, yay! I'm having an awfuly great day.
+
+        summary.txt:
+            Jan
+                 - 01 :)
+                 - 14 :)
+            Feb
+                 - 10 :|
+                 - 21 :(
+                 - 23 :)
+            May
+                 - 02 :(
+                 - 15 :)
+            Jun
+                 - 01 :)
+                 - 11 :)
+
+            9 total days analyzed
+
+ */
