@@ -10,12 +10,15 @@ import java.util.Scanner;
 
 public class DiaryAnalysis {
 
+    // debug switch
+    public static final boolean DEBUG = false;
+
     // Program entry point
     public static void main(String[] args) {
         try {
             // Set path to input and output
             File input = new File("data/diary.txt");
-            File output = new File("data/summary.txt");
+            File output = new File("out/summary.txt");
 
             // Ensure that there is a file ready to write
             output.createNewFile();
@@ -68,6 +71,9 @@ public class DiaryAnalysis {
 
             // compute score
             int score = lineRate(diary);
+            if (DEBUG) {
+                System.out.printf("%s%s: %d\n", month, day, score);
+            }
 
             // increase counter by one
             counter++;
@@ -99,13 +105,25 @@ public class DiaryAnalysis {
     // A internal function for lineRate(), providing better functionality segmentation.
     // Return score for each word
     public static int wordRate(String word) {
+        String[] p_word = {"good", "great", "yay"};
+        String[] n_word = {"terrible", "horrible", "awful"};
+
         word = word.toLowerCase();
-        if (word.contains("good") || word.contains("great") || word.contains("yay")) {
-            return 1;
-        } else if (word.contains("terrible") || word.contains("horrible") || word.contains("awful")) {
-            return -1;
+        int score = 0;
+
+        // Test for positive word first
+        for (String token : p_word) {
+            if (word.contains(token)) {
+                score++;
+            }
         }
-        return 0;
+        for (String token : n_word) {
+            if (word.contains(token)) {
+                score--;
+            }
+        }
+
+        return score;
     }
 }
 
