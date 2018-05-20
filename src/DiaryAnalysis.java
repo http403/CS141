@@ -105,20 +105,22 @@ public class DiaryAnalysis {
     // A internal function for lineRate(), providing better functionality segmentation.
     // Return score for each word
     public static int wordRate(String word) {
-        String[] p_word = {"good", "great", "yay"};
-        String[] n_word = {"terrible", "horrible", "awful"};
+        Scanner p_word = new Scanner("good great yay");
+        Scanner n_word = new Scanner("terrible horrible awful");
 
         word = word.toLowerCase();
         int score = 0;
 
-        // Test for positive word first
-        for (String token : p_word) {
-            if (word.contains(token)) {
+        // Check for positive keywords
+        while (p_word.hasNext()) {
+            if (word.contains(p_word.next())) {
                 score++;
             }
         }
-        for (String token : n_word) {
-            if (word.contains(token)) {
+
+        // Check for negative keywords
+        while (n_word.hasNext()) {
+            if (word.contains(n_word.next())) {
                 score--;
             }
         }
