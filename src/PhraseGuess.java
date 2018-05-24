@@ -18,9 +18,10 @@ public class PhraseGuess {
     }
 
     // wrapper for main logic components
-    public static void play() throws java.io.FileNotFoundException {
-
+    public static void play() {
+        puzzleLoad();
     }
 
-
+    // puzzle parser
+    public static String[] puzzleLoad() throws java.io.FileNotFoundException {}
 }
