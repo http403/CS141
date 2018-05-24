@@ -12,49 +12,49 @@
 // object: a particular instance of a class with it's own unique state
 public class Point {
 
-   // fields/instance variables: (combined make up the object's state) 
-   // should be private and declared (but not initialized)
-   int x;
-   int y;
+    // fields/instance variables: (combined make up the object's state)
+    // should be private and declared (but not initialized)
+    int x;
+    int y;
 
-   // constructors: allow you to create an Object from this class
-   // no return type, same name as the class, initalize all fields
-   public Point() {
-   }
+    // constructors: allow you to create an Object from this class
+    // no return type, same name as the class, initalize all fields
+    public Point() {
+    }
 
-   public Point(int startX, int startY) {
-   }
+    public Point(int startX, int startY) {
+    }
 
-   // accessors: allow you to access a field of an Object's state
-   // use "get", return a field's value, no params
-   public int getX() {
-      return 0;
-   }
+    // accessors: allow you to access a field of an Object's state
+    // use "get", return a field's value, no params
+    public int getX() {
+        return 0;
+    }
 
-   public int getY() {
-      return 0;
-   }
+    public int getY() {
+        return 0;
+    }
 
-   // mutators: allow you to change a field of an Object's state
-   // use "set", take a parameter for new value, changes field variable
-   public void setX(int newX) {
-   }
-   
-   // OTHER BEHAVIOR: other methods that don't follow the structure
-   // of accessors and mutators
-   
-   // Moves this point to the specified location in the (x,y) coordinate plane.
-   public void move(int x, int y) {
-   }
-   
-   // Translates this point, at location (x,y), by dx along the x axis 
-   // and dy along the y axis so that it now represents the point (x+dx,y+dy).
-   public void translate(int dx, int dy) {
-   }
-   
-   // toString: allows you to print out the state of an Object
-   // must return a string, should NOT have System.out.println here
-   public String toString() {
-      return "";
-   }
+    // mutators: allow you to change a field of an Object's state
+    // use "set", take a parameter for new value, changes field variable
+    public void setX(int newX) {
+    }
+
+    // OTHER BEHAVIOR: other methods that don't follow the structure
+    // of accessors and mutators
+
+    // Moves this point to the specified location in the (x,y) coordinate plane.
+    public void move(int x, int y) {
+    }
+
+    // Translates this point, at location (x,y), by dx along the x axis
+    // and dy along the y axis so that it now represents the point (x+dx,y+dy).
+    public void translate(int dx, int dy) {
+    }
+
+    // toString: allows you to print out the state of an Object
+    // must return a string, should NOT have System.out.println here
+    public String toString() {
+        return "";
+    }
 }
