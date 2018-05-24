@@ -6,17 +6,20 @@ import java.util.*;
 public class Day15OOP {
 
     public static void main(String[] args) {
-        Point one = new Point(1, 30);
-        Point two = new Point(2, 300);
+        Point one = new Point(1, 9);
+        Point two = new Point(5, 89);
 
-        System.out.println("one = " + one + ", two = " + two);
+//        System.out.println("one = " + one + ", two = " + two);
+//
+//        System.out.println("one = " + one + ", two = " + two);
 
-        System.out.println("one = " + one + ", two = " + two);
+//        pointsAreObjects(one, two);
+        usingGraph(one, two);
     }
 
     public static void pointsAreObjects(Point first, Point second) {
         System.out.println("\tfirst = " + first + ", second = " + second);
-
+        first.move(100, 100);
         System.out.println("\tfirst = " + first + ", second = " + second);
     }
 

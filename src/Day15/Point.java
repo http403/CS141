@@ -16,12 +16,15 @@ public class Point {
 
     // fields/instance variables: (combined make up the object's state)
     // should be private and declared (but not initialized)
-    int x;
-    int y;
+    // Synonym: Global Variables (similar as have global scope)
+    private int x;
+    private int y;
 
     // constructors: allow you to create an Object from this class
     // no return type, same name as the class, initalize all fields
     public Point() {
+        x = 0;
+        y = 0;
     }
 
     public Point(int startX, int startY) {
@@ -32,16 +35,21 @@ public class Point {
     // accessors: allow you to access a field of an Object's state
     // use "get", return a field's value, no params
     public int getX() {
-        return 0;
+        return x;
     }
 
     public int getY() {
-        return 0;
+        return y;
     }
 
     // mutators: allow you to change a field of an Object's state
     // use "set", take a parameter for new value, changes field variable
     public void setX(int newX) {
+        x = newX;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     // OTHER BEHAVIOR: other methods that don't follow the structure
@@ -49,16 +57,21 @@ public class Point {
 
     // Moves this point to the specified location in the (x,y) coordinate plane.
     public void move(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     // Translates this point, at location (x,y), by dx along the x axis
     // and dy along the y axis so that it now represents the point (x+dx,y+dy).
     public void translate(int dx, int dy) {
+        this.x += dx;
+        this.y += dy;
     }
 
     // toString: allows you to print out the state of an Object
     // must return a string, should NOT have System.out.println here
+    // Python Class equivalent = __repr__() and __str__()
     public String toString() {
-        return "";
+        return String.format("<Point x=%d y=%d>", x, y);
     }
 }

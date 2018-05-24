@@ -19,11 +19,11 @@ public class Graph {
 
     //(unconventional) mutator
     public void addPoint(Point p) {
-        if (p.x > grid.length || p.y > grid[0].length) {
+        if (p.getX() > grid.length || p.getY() > grid[0].length) {
             System.out.println("Could not plot: " + p);
         } else {
             System.out.println("Plotted: " + p);
-            grid[p.y][p.x] = 'x';
+            grid[p.getY()][p.getX()] = 'x';
         }
     }
 
