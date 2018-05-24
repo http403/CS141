@@ -1,5 +1,6 @@
-//import java.awt.Point;
+package Day15;
 
+//import java.awt.Point;
 import java.util.*;
 
 public class Day15OOP {

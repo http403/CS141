@@ -6,6 +6,8 @@
 // procedural programming: a program as a sequence of commands
 // object oriented programming: a group of interacting Objects
 
+package Day15;
+
 // class: a blueprint for creating an object; defines an object's state and behavior
 //    state: things the Object remembers (fields)
 //    behavior: things the Object can do (methods)
@@ -23,6 +25,8 @@ public class Point {
     }
 
     public Point(int startX, int startY) {
+        x = startX;
+        y = startY;
     }
 
     // accessors: allow you to access a field of an Object's state
