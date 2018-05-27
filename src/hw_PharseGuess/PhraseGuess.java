@@ -1,6 +1,6 @@
 package hw_PharseGuess;
 
-// Your name here
+// Hartman Tam
 // CS 141
 // HW Core Topics: Array, file input, strings
 //
