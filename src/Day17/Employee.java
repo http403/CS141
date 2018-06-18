@@ -18,24 +18,25 @@
    e.g. System.out.println(new Employee()); should print an Employee in a logical way.
 */
 
+package Day17;
+
 public class Employee {
 
-   
-   
-   //other behavior
-   public void showHours() {
-      System.out.println("I work " + getHours() + " hours per week.");
-   }
-   
-   public void showSalary() {
-      System.out.println("My salary is $" + getSalary() + ".");
-   }
-   
-   public void showVacation() {
-      System.out.println("I receive " + (getVacationDays()/5) + " weeks vacation.");
-   }  
-   
-   public void applyForVacation() {
-      System.out.println("Use the " + getVacationForm() + " vacation form.");
-   }
+
+    //other behavior
+    public void showHours() {
+        System.out.println("I work " + getHours() + " hours per week.");
+    }
+
+    public void showSalary() {
+        System.out.println("My salary is $" + getSalary() + ".");
+    }
+
+    public void showVacation() {
+        System.out.println("I receive " + (getVacationDays() / 5) + " weeks vacation.");
+    }
+
+    public void applyForVacation() {
+        System.out.println("Use the " + getVacationForm() + " vacation form.");
+    }
 }
