@@ -20,12 +20,21 @@ public class PetLicense {
     }
 
     //accessors
+    public String getIssueDate() { return this.issueDate; }
+    public int getLiceseNumber() { return this.licenseNumber; }
+    public int getZipCode() { return this.zipCode; }
+    public Pet getAnimal() { return this.animal; }
+
 
     //mutators
+    public void setIssueDate (String value) { this.issueDate = value; }
+    public void setLicenseNumber (int value) { this.licenseNumber = value; }
+    public void setZipCode (int value) { this.zipCode = value; }
+    public void setAnimal (Pet value) { this.animal = value; }
 
     //toString
     public String toString() {
-        return "" + licenseNumber;
+        return String.format("<PetLicense id=%d name=%s>\n", this.licenseNumber, this.animal.getName());
     }
 
 }

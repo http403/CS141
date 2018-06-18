@@ -17,4 +17,15 @@ public class Pet {
         this.secondaryBreed = secondaryBreed;
     }
 
+    public String getName() { return this.name; }
+    public String getSpecies() { return this.species; }
+    public String getPrimaryBreed() { return this.primaryBreed; }
+    public String getSecondaryBreed() { return this.secondaryBreed; }
+
+    public void setNmae(String name) { this.name = name; }
+
+
+    public String toString() {
+        return String.format("<Pet name=%s, species=%s>\n", this.name, this.species);
+    }
 }

@@ -14,17 +14,45 @@ import java.io.*;
 public class Day16MoreOOP {
 
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("Seattle_Pet_Licenses.csv"));
+        Scanner input = new Scanner(new File("data/Seattle_Pet_Licenses.csv"));
         PetLicense[] petDB = loadInput(input);
-        System.out.println(Arrays.toString(petDB));
+//        System.out.println(Arrays.toString(petDB));
 
-//       String lookupName = "Love";
+       String lookupName = "pig";
 //       int count = findByName(petDB, lookupName);
-//       System.out.printf("%s was found %d times in the database.",lookupName,count);
+       int count = countSpecies(petDB, lookupName);
+       System.out.printf("%s was found %d times in the database.",lookupName,count);
     }
 
     public static int findByName(PetLicense[] db, String name) {
-        return 0;
+        int count = 0;
+        for (int i = 0; i < db.length; i++) {
+            if (db[i] != null && db[i].getAnimal().getName().toLowerCase().contains(name)) {
+                count++;
+                System.out.println(db[i]);
+            }
+        }
+        return count;
+    }
+
+    public static int countRegistedSameDay(PetLicense[] db, String date) {
+        int count = 0;
+        for (int i = 0; i < db.length; i++) {
+            if (db[i] != null && db[i].getIssueDate().equals(date)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public static int countSpecies(PetLicense[] db, String species) {
+        int count = 0;
+        for (int i = 0; i < db.length; i++) {
+            if (db[i] != null && db[i].getAnimal().getSpecies().equalsIgnoreCase(species.toLowerCase())) {
+                count++;
+            }
+        }
+        return count;
     }
 
     public static PetLicense[] loadInput(Scanner in) {
