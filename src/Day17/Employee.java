@@ -22,22 +22,27 @@ package Day17;
 
 public class Employee {
 
+    // class variable, share across instances
+    private static int nextId = 0;
+
+    // instance variable
     private int id, hours, vacationDays;
     private double salary;
     private String name, vacationForm;
 
     // Constructor
-    public Employee(String name) {
-        this.name = name;
-        this.id = 0;
+    public Employee() {
+        this.id = Employee.nextId++;
+        this.name = "Employee " + this.id;
         this.hours = 40;
         this.salary = 40000.00;
         this.vacationDays = 10;
         this.vacationForm = "yellow";
     }
 
-    public Employee() {
-        this("Employee 0");
+    public Employee(String name) {
+        this();
+        this.name = name;
     }
 
     // Getter
