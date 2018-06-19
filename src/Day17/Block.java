@@ -19,6 +19,12 @@ public class Block extends GObject {
         this.width = 20;
     }
 
+    public Block(int x, int y, int w) {
+        this(x, y);
+        setColor(Color.BLACK);
+        this.width = w;
+    }
+
     public GRectangle getBounds() {
         return new GRectangle(getX(), getY(), this.width, this.width);
     }
