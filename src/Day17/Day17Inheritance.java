@@ -15,13 +15,13 @@ public class Day17Inheritance {
         System.out.println("Default Employee = \n" + em);
         printInfo(em);
 
-//       Employee ricco = new Employee("Ricco");
-//       System.out.println("Employee ricco = \n" + ricco);
-//       printInfo(ricco);
+        Employee ricco = new Employee("Ricco");
+        System.out.println("Employee ricco = \n" + ricco);
+        printInfo(ricco);
     }
 
     private static void printInfo(Employee person) {
-        System.out.println("ID: " + person.getID());
+        System.out.println("ID: " + person.getId());
         System.out.println("Name: " + person.getName());
         person.showHours();
         person.showSalary();
