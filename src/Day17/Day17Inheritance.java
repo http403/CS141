@@ -5,9 +5,9 @@ import java.util.*;
 public class Day17Inheritance {
 
     public static void main(String[] args) {
-        testEmployee();
+        //testEmployee();
         //testBoss();
-        //simulation();
+        simulation();
     }
 
     public static void testEmployee() {
@@ -27,25 +27,36 @@ public class Day17Inheritance {
         person.showSalary();
         person.showVacation();
         person.applyForVacation();
+        System.out.println();
     }
 
     public static void testBoss() {
+        Boss b = new Boss();
+        printInfo(b);
+
+        Employee e = new Employee();
+        printInfo(e);
+        b.promote(e);
+        printInfo(e);
     }
 
     public static void simulation() {
-        // Boss crystal = new Boss("Crystal");
-        // Employee[] staff = new Employee[3];
+        Boss crystal = new Boss("Crystal");
+        Employee[] staff = new Employee[3];
 
-        // for(int i = 0; i < staff.length; i++) {
-        //   staff[i] = new Employee();
-        // }
+        for (int i = 0; i < staff.length; i++) {
+            staff[i] = new Employee();
+        }
 
-        // System.out.println(Arrays.toString(staff));
+        System.out.println(Arrays.toString(staff));
 
-        // Random rand = new Random();
-        // int luckyDuck = rand.nextInt(staff.length);
-        // crystal.promote(staff[luckyDuck]);
+        Random rand = new Random();
+        int luckyDuck = rand.nextInt(staff.length);
+        crystal.promote(staff[luckyDuck]);
 
-        // System.out.println(Arrays.toString(staff));
+//        System.out.println(Arrays.toString(staff));
+        for(Employee e : staff) {
+            printInfo(e);
+        }
     }
 }
