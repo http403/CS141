@@ -22,6 +22,66 @@ package Day17;
 
 public class Employee {
 
+    private int id, hours, vacationDays;
+    private double salary;
+    private String name, vacationForm;
+
+    // Constructor
+    public Employee(String name) {
+        this.name = name;
+        this.id = 0;
+        this.hours = 40;
+        this.salary = 40000.00;
+        this.vacationDays = 10;
+        this.vacationForm = "yellow";
+    }
+
+    public Employee() {
+        this("Employee 0");
+    }
+
+    // Getter
+    public double getSalary() {
+        return this.salary;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public int getHours() {
+        return this.hours;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public int getVacationDays() {
+        return this.vacationDays;
+    }
+
+    public String getVacationForm() {
+        return this.vacationForm;
+    }
+
+    // Setter
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
+    public void setVacationDays(int vacationDays) {
+        this.vacationDays = vacationDays;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    // toString
+    public String toString() {
+        return String.format("<Employee id=%d name=%s>", this.id, this.name);
+    }
 
     //other behavior
     public void showHours() {
